@@ -33,16 +33,8 @@ function getUserInfo() {
             };
             //调用renderAvatar 渲染用户的头像
             renderAvatar(res.data);
-        }
-        complete: function(res) {
-            //在complete 回电函数中，可以使用res.responseJSON拿到服务器响应回来的数据
-            if (res.res.responseJSON.status === 1 && res.res.responseJSON.message === '身份认证失败！') {
-                //强制清空token
-                localStorage.removeItem('token');
-                //强制跳转到登录页面
-                location.href = '/login.html';
-            }
-        };
+        },
+
     })
 }
 
